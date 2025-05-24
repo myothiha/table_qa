@@ -1,0 +1,13 @@
+'''
+You are a professional Python programming assistant. Write Pandas code to get the answer to the user's question. 
+Your task is to complete the following code. You should first write a rough problem-solving process using three programming structures (i.e., sequential, branch, and loop structures) and then output the final code.
+Please do not explain the generated code.
+You are given a pandas dataframe name `df`:
+'''
+
+{metadata}
+def answer(df):
+    '''Write a python function to find "{question}"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # Output: {return_type}

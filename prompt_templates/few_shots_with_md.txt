@@ -1,0 +1,91 @@
+'''
+You are a professional Python programming assistant. Write Pandas code to get the answer to the user's question.
+Here are some demonstration example:
+'''
+
+def example1(df):
+    '''Write a python function to find "Is the person with the highest net worth self-made?"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # All columns: ['rank', 'personName', 'age', 'finalWorth', 'category', 'source', 'country', 'state', 'city', 'organization', 'selfMade', 'gender', 'birthDate', 'title', 'philanthropyScore', 'bio', 'about']
+    # Output: return a boolean
+    # Process:
+    # 1. Require columnss to answer the question: ['finalWorth', 'selfMade']
+    # 2. Sort the dataframe by the "finalWorth" column in descending order.
+    # 3. Select the first row to identify the person with the highest net worth.
+    # 4. Return the value of the 'selfMade' column for that person.
+    # Write your code here:
+    return df.loc[df['finalWorth'].idxmax()]['selfMade']
+
+def example2(df):
+    '''Write a python function to find "How many unique passenger classes are present in the dataset?"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # All columns: ['Survived', 'Pclass', 'Name', 'Sex', 'Age', 'Siblings_Spouses Aboard', 'Parents_Children Aboard', 'Fare']
+    # Output: return an integer
+    # Process:
+    # 1. Required columns to answer the question: ['Pclass']
+    # 2. Extract the 'Pclass' column from the dataframe.
+    # 3. Find the unique values in the 'Pclass' column.
+    # 4. Count the number of unique values and return it.
+    # Write your code here:
+    return df['Pclass'].nunique()
+
+def example3(df):
+    '''Write a python function to find "List the top 4 cities where the youngest billionaires live."'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # All columns: ['rank', 'personName', 'age', 'finalWorth', 'category', 'source', 'country', 'state', 'city', 'organization', 'selfMade', 'gender', 'birthDate', 'title', 'philanthropyScore', 'bio', 'about']
+    # Output: return a list[category]
+    # Process:
+    # 1. Required columns to answer the question: ['city', 'age']
+    # 2. Filter the dataframe to only include rows where 'Age' is less than 70.
+    # 3. Group the filtered dataframe by 'City' and compute the minimum 'Age'.
+    # 4. Sort the grouped data in ascending order of the ages.
+    # 5. Extract the top 4 cities.
+    # 6. Return the top 4 cities as a list.
+    # Write your code here:
+    return df[df['age'] < 70].groupby('city')['age'].min().sort_values().head(4).index.tolist()
+
+def example4(df):
+    '''Write a python function to find "What are the top 4 hours with the most complaints?"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # All columns: ['segmentation_1', 'descriptor', 'complaint_type', 'created_date', 'borough', 'hour', 'month_name', 'weekday_name', 'agency', 'resolution_description', 'agency_name', 'city', 'location_type', 'incident_zip', 'incident_address', 'street_name', 'cross_street_1', 'cross_street_2', 'intersection_street_1', 'intersection_street_2', 'address_type', 'landmark', 'facility_type', 'status', 'due_date', 'resolution_action_updated_date', 'community_board', 'x_coordinate', 'y_coordinate', 'park_facility_name', 'park_borough', 'bbl', 'open_data_channel_type', 'vehicle_type', 'taxi_company_borough', 'taxi_pickup_location', 'bridge_highway_name', 'bridge_highway_direction', 'road_ramp', 'bridge_highway_segment', 'latitude', 'longitude', 'location', 'unique_key', 'Unnamed_0', 'closed_date']
+    # Output: return a list[number]
+    # Process:
+    # 1. Required column to answer the question: ['hour']
+    # 2. Group the dataframe by 'hour' and count the occurrences for each hour.
+    # 3. Sort the grouped data in descending order of the counts.
+    # 4. Extract the top 4 most frequent hours.
+    # 5. Return the top 4 hours as a list.
+    # Write your code here:
+    return df['hour'].value_counts().head(4).index.tolist()
+
+def example5(df):
+    '''Write a python function to find "List the top 5 ranks of billionaires who are not self-made."'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # All columns: ['rank', 'personName', 'age', 'finalWorth', 'category', 'source', 'country', 'state', 'city', 'organization', 'selfMade', 'gender', 'birthDate', 'title', 'philanthropyScore', 'bio', 'about']
+    # Output: return a list[number]
+    # Process:
+    # 1. Required columns to answer the question: ['rank', 'selfMade']
+    # 2. Filter the dataframe to only include rows where 'Self Made' is False.
+    # 3. Extract the 'rank' column from the filtered dataframe.
+    # 4. Sort the 'rank' column in ascending order.
+    # 5. Extract the top 5 ranks.
+    # 6. Return the top 5 ranks as a list.
+    # Write your code here:
+    return df[~df['selfMade']]['rank'].sort_values().head(5).tolist()
+
+'''
+Your task is to complete the following code. You should first write a rough problem-solving process using three programming structures (i.e., sequential, branch, and loop structures) and then output the final code.
+You are given a pandas dataframe name `df`:
+'''
+
+{metadata}
+def answer(df):
+    '''Write a python function to find "{question}"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # Output: {return_type}

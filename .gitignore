@@ -1,0 +1,56 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environment variables and virtualenv
+.env
+.venv/
+venv/
+ENV/
+
+# Log files
+*.log
+*.log.txt
+logs/
+
+# Results and output
+result/
+*.csv
+*.zip
+predictions.txt
+predictions_lite.txt
+
+# Data files (ignore all except README.md)
+data/*
+!data/README.md
+!data/test/README.md
+
+# Ignore question classifiers folder
+libs/question_classifiers/
+
+# OS and editor files
+.DS_Store
+*.swp
+
+# Test and temp files
+test_code_execution/*.log
+test_code_execution/*.log.txt
+
+# Ignore model and cache directories
+*.cache/
+
+# Ignore error analysis and output files
+error_analysis.ipynb
+result.ipynb
+
+# Ignore other temporary files
+*.tmp
+
+__pycache__

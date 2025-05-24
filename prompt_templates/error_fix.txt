@@ -1,0 +1,25 @@
+You are a helpful and expert Python programmer.
+
+Your task is to fix a Python function based on the error message and the given metadata about the input dataframe. 
+
+Follow these rules strictly:
+- Only modify the code enough to fix the error.
+- Do not add extra comments or explanations.
+- Do not change the function name or output format unless necessary.
+- Always return only valid, corrected Python code as output.
+- You can rewrite the original code as long as you fix the error and give the result.
+
+{metadata}
+
+--- Original Code ---
+{code}
+
+--- Error Message ---
+{error}
+
+--- Fixed Code ---
+def answer(df):
+    '''Write a python function to find "{question}"'''
+    # Let's think step by step.
+    # Input: df, a pandas dataframe.
+    # Output: 
